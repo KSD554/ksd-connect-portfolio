@@ -16,7 +16,7 @@ const projects = [
     description: "Plateforme e-commerce moderne avec catalogue produits, panier et système de paiement intégré.",
     image: projet2Image,
     tags: ["React", "Node.js", "MongoDB", "Stripe"],
-    demoUrl: "#",
+    demoUrl: "https://multi-vendor-ecommerce-main-hi7c.vercel.app/",
     githubUrl: "#",
     featured: true
   },
@@ -26,7 +26,7 @@ const projects = [
     description: "Application immobilière pour la recherche et gestion de propriétés avec géolocalisation.",
     image: projet1Image,
     tags: ["React", "Express", "PostgreSQL", "Maps API"],
-    demoUrl: "#",
+    demoUrl: "https://casacentral-seven.vercel.app/",
     githubUrl: "#",
     featured: true
   },
@@ -36,7 +36,7 @@ const projects = [
     description: "Outil de création de CV professionnel avec templates personnalisables et export PDF.",
     image: projet5Image,
     tags: ["React", "TypeScript", "PDF.js", "Tailwind"],
-    demoUrl: "#",
+    demoUrl: "https://cv-forge-ci.vercel.app/",
     githubUrl: "#",
     featured: false
   },
@@ -46,7 +46,7 @@ const projects = [
     description: "Plateforme de blog collaborative avec système d'articles et commentaires.",
     image: plumeImage,
     tags: ["React", "Node.js", "MongoDB", "Socket.io"],
-    demoUrl: "#",
+    demoUrl: "https://plume-partagee.onrender.com/",
     githubUrl: "#",
     featured: false
   },
@@ -56,7 +56,7 @@ const projects = [
     description: "Application web pour créer des logos personnalisés avec outils de design intuitifs.",
     image: logoImage,
     tags: ["React", "Canvas API", "SVG", "Design Tools"],
-    demoUrl: "#",
+    demoUrl: "https://logo-craft-4kn4.vercel.app/",
     githubUrl: "#",
     featured: false
   }
