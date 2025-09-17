@@ -3,12 +3,18 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Eye, ArrowRight } from "lucide-react";
 
+import projet2Image from "@/assets/projet-2-updated.png";
+import projet1Image from "@/assets/projet-1-updated.png";
+import projet5Image from "@/assets/projet-5-updated.png";
+import plumeImage from "@/assets/plume-partagee-updated.png";
+import logoImage from "@/assets/logo-craft-updated.png";
+
 const projects = [
   {
     id: 1,
     title: "E-Shop - Plateforme E-commerce",
     description: "Plateforme e-commerce moderne avec catalogue produits, panier et système de paiement intégré.",
-    image: "user-uploads://projet-2-qCDNlUh8.png",
+    image: projet2Image,
     tags: ["React", "Node.js", "MongoDB", "Stripe"],
     demoUrl: "#",
     githubUrl: "#",
@@ -18,7 +24,7 @@ const projects = [
     id: 2,
     title: "CasaCentral - Immobilier",
     description: "Application immobilière pour la recherche et gestion de propriétés avec géolocalisation.",
-    image: "user-uploads://projet-1-DXzts_qf.png",
+    image: projet1Image,
     tags: ["React", "Express", "PostgreSQL", "Maps API"],
     demoUrl: "#",
     githubUrl: "#",
@@ -28,7 +34,7 @@ const projects = [
     id: 3,
     title: "CVForge - Générateur de CV",
     description: "Outil de création de CV professionnel avec templates personnalisables et export PDF.",
-    image: "user-uploads://projet-5-CPPbEvOG.png",
+    image: projet5Image,
     tags: ["React", "TypeScript", "PDF.js", "Tailwind"],
     demoUrl: "#",
     githubUrl: "#",
@@ -38,7 +44,7 @@ const projects = [
     id: 4,
     title: "Plume Partagée - Blog",
     description: "Plateforme de blog collaborative avec système d'articles et commentaires.",
-    image: "user-uploads://plume-partagee-BHqnhPoT.png",
+    image: plumeImage,
     tags: ["React", "Node.js", "MongoDB", "Socket.io"],
     demoUrl: "#",
     githubUrl: "#",
@@ -48,7 +54,7 @@ const projects = [
     id: 5,
     title: "LogoCraft - Créateur de Logos",
     description: "Application web pour créer des logos personnalisés avec outils de design intuitifs.",
-    image: "user-uploads://logo-craft-B1KoF-fu.png",
+    image: logoImage,
     tags: ["React", "Canvas API", "SVG", "Design Tools"],
     demoUrl: "#",
     githubUrl: "#",

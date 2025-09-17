@@ -9,15 +9,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 transition-smooth",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-smooth",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-smooth",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-smooth",
-        ghost: "hover:bg-accent hover:text-accent-foreground transition-smooth",
-        link: "text-primary underline-offset-4 hover:underline transition-smooth",
-        hero: "bg-gradient-primary text-primary-foreground hover:shadow-glow hover:scale-105 transition-bounce font-semibold shadow-elegant",
-        cta: "bg-gradient-hero text-primary-foreground hover:shadow-glow hover:scale-105 transition-bounce font-bold animate-glow",
-        premium: "bg-gradient-card text-foreground border border-primary/20 hover:bg-primary hover:text-primary-foreground hover:shadow-elegant transition-smooth shadow-card",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-all duration-300",
+        outline: "border border-border bg-background hover:bg-accent hover:text-accent-foreground transition-all duration-300",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-all duration-300",
+        ghost: "hover:bg-accent hover:text-accent-foreground transition-all duration-300",
+        link: "text-primary underline-offset-4 hover:underline transition-all duration-300",
+        hero: "bg-gradient-to-r from-primary to-primary-glow text-white hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold shadow-elegant border-0",
+        cta: "bg-gradient-to-r from-primary via-primary-glow to-secondary-glow text-white hover:shadow-glow hover:scale-105 transition-all duration-300 font-bold animate-pulse shadow-elegant border-0",
+        premium: "bg-card text-card-foreground border border-primary/20 hover:bg-primary hover:text-white hover:shadow-elegant transition-all duration-300 shadow-card",
       },
       size: {
         default: "h-10 px-4 py-2",

@@ -4,34 +4,40 @@ import { Button } from "@/components/ui/button";
 import { X, ZoomIn } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
+import projet2Image from "@/assets/projet-2-updated.png";
+import projet1Image from "@/assets/projet-1-updated.png";
+import projet5Image from "@/assets/projet-5-updated.png";
+import plumeImage from "@/assets/plume-partagee-updated.png";
+import logoImage from "@/assets/logo-craft-updated.png";
+
 const galleryImages = [
   {
     id: 1,
-    src: "user-uploads://projet-2-qCDNlUh8.png",
+    src: projet2Image,
     title: "E-Shop Interface",
     description: "Interface utilisateur moderne pour plateforme e-commerce"
   },
   {
     id: 2,
-    src: "user-uploads://projet-1-DXzts_qf.png",
+    src: projet1Image,
     title: "CasaCentral Design",
     description: "Design épuré pour application immobilière"
   },
   {
     id: 3,
-    src: "user-uploads://projet-5-CPPbEvOG.png",
+    src: projet5Image,
     title: "CVForge Dashboard",
     description: "Interface de création de CV professionnel"
   },
   {
     id: 4,
-    src: "user-uploads://plume-partagee-BHqnhPoT.png",
+    src: plumeImage,
     title: "Plume Partagée",
     description: "Design coloré pour plateforme de blog"
   },
   {
     id: 5,
-    src: "user-uploads://logo-craft-B1KoF-fu.png",
+    src: logoImage,
     title: "LogoCraft Studio",
     description: "Outil de création de logos interactif"
   }

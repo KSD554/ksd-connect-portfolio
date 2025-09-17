@@ -16,13 +16,6 @@ const Index = () => {
         <ContactSection />
       </main>
       <ChatBot />
-      
-      {/* Calendly Script */}
-      <script 
-        type="text/javascript" 
-        src="https://assets.calendly.com/assets/external/widget.js" 
-        async 
-      />
     </div>
   );
 };
