@@ -94,16 +94,16 @@ export const ChatBot = () => {
       <Button
         variant="cta"
         size="lg"
-        className="fixed bottom-6 right-6 z-50 rounded-full shadow-glow animate-glow"
+        className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 rounded-full shadow-glow animate-glow"
         onClick={() => setIsOpen(true)}
       >
-        <MessageCircle className="w-6 h-6" />
-        Chat IA
+        <MessageCircle className="w-5 h-5 md:w-6 md:h-6" />
+        <span className="hidden sm:inline ml-2">Chat IA</span>
       </Button>
 
       {/* Chat Window */}
       {isOpen && (
-        <Card className="fixed bottom-24 right-6 z-50 w-96 h-96 shadow-elegant border border-primary/20 animate-slide-up">
+        <Card className="fixed bottom-16 right-4 md:bottom-24 md:right-6 z-50 w-[calc(100vw-2rem)] max-w-96 h-[70vh] max-h-96 shadow-elegant border border-primary/20 animate-slide-up">
           <CardHeader className="flex flex-row items-center justify-between bg-gradient-primary text-primary-foreground rounded-t-lg">
             <div className="flex items-center gap-2">
               <User className="w-5 h-5" />
@@ -119,16 +119,16 @@ export const ChatBot = () => {
             </Button>
           </CardHeader>
           
-          <CardContent className="p-0 flex flex-col h-80">
+          <CardContent className="p-0 flex flex-col h-[calc(70vh-4rem)] max-h-80">
             {/* Messages */}
-            <div className="flex-1 p-4 overflow-y-auto space-y-4">
+            <div className="flex-1 p-2 md:p-4 overflow-y-auto space-y-3">
               {messages.map((message) => (
                 <div
                   key={message.id}
                   className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-[80%] p-3 rounded-lg whitespace-pre-line ${
+                    className={`max-w-[85%] p-2 md:p-3 rounded-lg whitespace-pre-line text-sm md:text-base ${
                       message.isUser
                         ? 'bg-primary text-primary-foreground'
                         : 'bg-muted text-muted-foreground'
@@ -153,7 +153,7 @@ export const ChatBot = () => {
             </div>
             
             {/* Input */}
-            <div className="p-4 border-t border-border">
+            <div className="p-2 md:p-4 border-t border-border">
               <div className="flex gap-2 mb-2">
                 <Button
                   variant="outline"
@@ -162,7 +162,7 @@ export const ChatBot = () => {
                   className="text-xs"
                 >
                   <Calendar className="w-3 h-3 mr-1" />
-                  RDV
+                  <span className="hidden sm:inline">RDV</span>
                 </Button>
               </div>
               
@@ -172,7 +172,7 @@ export const ChatBot = () => {
                   value={inputMessage}
                   onChange={(e) => setInputMessage(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && handleSendMessage(inputMessage)}
-                  className="flex-1"
+                  className="flex-1 text-sm md:text-base"
                 />
                 <Button
                   variant="hero"

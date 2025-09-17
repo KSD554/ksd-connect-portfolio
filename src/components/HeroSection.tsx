@@ -46,7 +46,7 @@ export const HeroSection = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4">
               <Button 
                 variant="cta" 
                 size="lg" 
@@ -98,7 +98,7 @@ export const HeroSection = () => {
                 <img
                   src={ksdPhoto}
                   alt="KSD - Développeur Full-Stack"
-                  className="w-80 h-96 object-cover rounded-2xl shadow-card"
+                  className="w-64 h-80 sm:w-72 sm:h-88 lg:w-80 lg:h-96 object-cover rounded-2xl shadow-card"
                 />
               </div>
             </div>
