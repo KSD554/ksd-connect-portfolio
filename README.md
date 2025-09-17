@@ -1,73 +1,58 @@
-# Welcome to your Lovable project
+🌐 Portfolio Intelligent – KSD
 
-## Project info
+Bienvenue sur mon portfolio multimédia interactif, développé pour présenter mes projets, compétences et permettre aux visiteurs de prendre facilement contact avec moi.
 
-**URL**: https://lovable.dev/projects/3069df36-0605-49d7-a982-8355c7ec1569
+🚀 Fonctionnalités principales
 
-## How can I edit this code?
+Accueil dynamique avec bio générée par l’API OpenAI.
 
-There are several ways of editing your application.
+Galerie de projets avec images optimisées (WebP/AVIF, lazy loading).
 
-**Use Lovable**
+Formulaire de contact relié à Supabase pour stocker les messages.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3069df36-0605-49d7-a982-8355c7ec1569) and start prompting.
+Calendly intégré pour réserver un rendez-vous en ligne :
+👉 Réserver un appel de 30 minutes
 
-Changes made via Lovable will be committed automatically to this repo.
+Boutons rapides : WhatsApp + Email direct.
 
-**Use your preferred IDE**
+Chatbot IA connecté à l’API OpenAI pour répondre aux visiteurs, présenter mes projets et les inciter à prendre contact.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+SEO optimisé : titres, meta descriptions (<160 caractères), contenu indexable, balises OG.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+🛠️ Stack technique
 
-Follow these steps:
+Frontend : Next.js + Tailwind CSS
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Backend : Supabase (auth, DB, stockage sécurisé)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Chatbot & Génération de contenu : OpenAI API
 
-# Step 3: Install the necessary dependencies.
-npm i
+Prise de rendez-vous : Calendly API / widget intégré
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Optimisation médias : CDN, formats modernes (WebP/AVIF)
 
-**Edit a file directly in GitHub**
+📂 Structure du projet
+.
+├── public/           # Images statiques
+├── pages/            # Pages (Accueil, Galerie, Contact, etc.)
+├── components/       # Composants réutilisables (Header, Footer, Chatbot…)
+├── lib/              # Intégrations API (Supabase, OpenAI)
+├── styles/           # Styles globaux Tailwind
+└── README.md         # Documentation
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
 
-**Use GitHub Codespaces**
+🔑 APIs utilisées
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Supabase : gestion des formulaires, base de données, stockage médias.
 
-## What technologies are used for this project?
+OpenAI API : génération bio, contenu dynamique, chatbot.
 
-This project is built with:
+Calendly : réservation rendez-vous (intégration widget).
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+📬 Contact
 
-## How can I deploy this project?
+📧 Email : kouassisadok3@gmail.com
 
-Simply open [Lovable](https://lovable.dev/projects/3069df36-0605-49d7-a982-8355c7ec1569) and click on Share -> Publish.
+💬 WhatsApp : +225 07 04 30 66 42
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+🌐 Portfolio en ligne : https://ksd-connect-portfolio.lovable.app/
