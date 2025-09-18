@@ -6,11 +6,14 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Calendar, MessageCircle, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 export const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
+    subject: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -21,16 +24,31 @@ export const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
-      // Simulate form submission - Replace with actual Supabase integration
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      const { error } = await supabase
+        .from('contact_messages')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone || null,
+            subject: formData.subject || null,
+            message: formData.message,
+            status: 'pending'
+          }
+        ]);
+
+      if (error) {
+        throw error;
+      }
       
       toast({
         title: "Message envoyé !",
         description: "Je vous répondrai dans les plus brefs délais.",
       });
       
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
     } catch (error) {
+      console.error('Error sending message:', error);
       toast({
         title: "Erreur",
         description: "Une erreur est survenue. Veuillez réessayer.",
@@ -86,15 +104,41 @@ export const ContactSection = () => {
                   />
                 </div>
                 
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="votre.email@example.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                      required
+                      className="transition-smooth focus:shadow-card"
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Téléphone (optionnel)</Label>
+                    <Input
+                      id="phone"
+                      type="tel"
+                      placeholder="+33 X XX XX XX XX"
+                      value={formData.phone}
+                      onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                      className="transition-smooth focus:shadow-card"
+                    />
+                  </div>
+                </div>
+                
                 <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="subject">Sujet</Label>
                   <Input
-                    id="email"
-                    type="email"
-                    placeholder="votre.email@example.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                    required
+                    id="subject"
+                    type="text"
+                    placeholder="Objet de votre message"
+                    value={formData.subject}
+                    onChange={(e) => setFormData(prev => ({ ...prev, subject: e.target.value }))}
                     className="transition-smooth focus:shadow-card"
                   />
                 </div>

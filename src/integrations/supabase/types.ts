@@ -16,28 +16,91 @@ export type Database = {
     Tables: {
       contact_messages: {
         Row: {
+          appointment_date: string | null
+          appointment_type: string | null
           created_at: string
           email: string
           id: string
           message: string
           name: string
+          notes: string | null
+          phone: string | null
           read: boolean | null
+          status: string | null
+          subject: string | null
         }
         Insert: {
+          appointment_date?: string | null
+          appointment_type?: string | null
           created_at?: string
           email: string
           id?: string
           message: string
           name: string
+          notes?: string | null
+          phone?: string | null
           read?: boolean | null
+          status?: string | null
+          subject?: string | null
         }
         Update: {
+          appointment_date?: string | null
+          appointment_type?: string | null
           created_at?: string
           email?: string
           id?: string
           message?: string
           name?: string
+          notes?: string | null
+          phone?: string | null
           read?: boolean | null
+          status?: string | null
+          subject?: string | null
+        }
+        Relationships: []
+      }
+      medias: {
+        Row: {
+          alt_text: string | null
+          created_at: string
+          description: string | null
+          file_size: number | null
+          file_type: string
+          file_url: string
+          id: string
+          is_featured: boolean | null
+          mime_type: string | null
+          tags: string[] | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          alt_text?: string | null
+          created_at?: string
+          description?: string | null
+          file_size?: number | null
+          file_type: string
+          file_url: string
+          id?: string
+          is_featured?: boolean | null
+          mime_type?: string | null
+          tags?: string[] | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          alt_text?: string | null
+          created_at?: string
+          description?: string | null
+          file_size?: number | null
+          file_type?: string
+          file_url?: string
+          id?: string
+          is_featured?: boolean | null
+          mime_type?: string | null
+          tags?: string[] | null
+          title?: string
+          updated_at?: string
         }
         Relationships: []
       }
