@@ -103,32 +103,32 @@ export const ChatBot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <Card className="fixed bottom-16 right-4 md:bottom-24 md:right-6 z-50 w-[calc(100vw-2rem)] max-w-96 h-[70vh] max-h-96 shadow-elegant border border-primary/20 animate-slide-up">
-          <CardHeader className="flex flex-row items-center justify-between bg-gradient-primary text-primary-foreground rounded-t-lg">
+        <Card className="fixed bottom-16 right-2 md:bottom-24 md:right-6 z-50 w-[calc(100vw-1rem)] max-w-sm md:max-w-96 h-[70vh] max-h-[500px] shadow-elegant border border-primary/20 animate-slide-up">
+          <CardHeader className="flex flex-row items-center justify-between bg-gradient-primary text-primary-foreground rounded-t-lg p-3 md:p-4">
             <div className="flex items-center gap-2">
-              <User className="w-5 h-5" />
-              <CardTitle className="text-lg">Assistant KSD</CardTitle>
+              <User className="w-4 h-4 md:w-5 md:h-5" />
+              <CardTitle className="text-base md:text-lg">Assistant KSD</CardTitle>
             </div>
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(false)}
-              className="text-primary-foreground hover:bg-primary-foreground/20"
+              className="text-primary-foreground hover:bg-primary-foreground/20 h-7 w-7 md:h-8 md:w-8 p-0"
             >
-              <X className="w-4 h-4" />
+              <X className="w-3 h-3 md:w-4 md:h-4" />
             </Button>
           </CardHeader>
           
-          <CardContent className="p-0 flex flex-col h-[calc(70vh-4rem)] max-h-80">
+          <CardContent className="p-0 flex flex-col h-[calc(70vh-4rem)] max-h-[440px]">
             {/* Messages */}
-            <div className="flex-1 p-2 md:p-4 overflow-y-auto space-y-3">
+            <div className="flex-1 p-2 md:p-4 overflow-y-auto space-y-3 min-h-0">
               {messages.map((message) => (
                 <div
                   key={message.id}
                   className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-[85%] p-2 md:p-3 rounded-lg whitespace-pre-line text-sm md:text-base ${
+                    className={`max-w-[85%] p-2 md:p-3 rounded-lg whitespace-pre-line text-sm md:text-base leading-relaxed ${
                       message.isUser
                         ? 'bg-primary text-primary-foreground'
                         : 'bg-muted text-muted-foreground'
@@ -141,7 +141,7 @@ export const ChatBot = () => {
               
               {isTyping && (
                 <div className="flex justify-start">
-                  <div className="bg-muted text-muted-foreground p-3 rounded-lg">
+                  <div className="bg-muted text-muted-foreground p-2 md:p-3 rounded-lg">
                     <div className="flex space-x-1">
                       <div className="w-2 h-2 bg-primary rounded-full animate-bounce"></div>
                       <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
@@ -153,16 +153,17 @@ export const ChatBot = () => {
             </div>
             
             {/* Input */}
-            <div className="p-2 md:p-4 border-t border-border">
+            <div className="p-2 md:p-4 border-t border-border bg-background/50">
               <div className="flex gap-2 mb-2">
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={handleCalendlyClick}
-                  className="text-xs"
+                  className="text-xs flex-shrink-0"
                 >
                   <Calendar className="w-3 h-3 mr-1" />
-                  <span className="hidden sm:inline">RDV</span>
+                  <span className="hidden sm:inline">Réservation en ligne</span>
+                  <span className="sm:hidden">RDV</span>
                 </Button>
               </div>
               
@@ -179,6 +180,7 @@ export const ChatBot = () => {
                   size="sm"
                   onClick={() => handleSendMessage(inputMessage)}
                   disabled={!inputMessage.trim() || isTyping}
+                  className="flex-shrink-0"
                 >
                   <Send className="w-4 h-4" />
                 </Button>

@@ -118,7 +118,12 @@ export const ProjectsSection = () => {
                 </div>
                 
                 <div className="flex gap-2">
-                  <Button variant="hero" size="sm" className="flex-1">
+                  <Button 
+                    variant="hero" 
+                    size="sm" 
+                    className="flex-1"
+                    onClick={() => window.open(project.demoUrl, '_blank')}
+                  >
                     <Eye className="w-4 h-4" />
                     Démo
                   </Button>

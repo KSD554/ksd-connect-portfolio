@@ -10,6 +10,10 @@ export const Header = () => {
     setIsMenuOpen(false);
   };
 
+  const handleCalendlyClick = () => {
+    window.open('https://calendly.com/khalilsaiddiop', '_blank');
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <nav className="container mx-auto px-6 py-4">
@@ -36,6 +40,18 @@ export const Header = () => {
               Projets
             </button>
             <button 
+              onClick={() => scrollToSection('education')}
+              className="text-foreground hover:text-primary transition-smooth"
+            >
+              Formation
+            </button>
+            <button 
+              onClick={() => scrollToSection('experience')}
+              className="text-foreground hover:text-primary transition-smooth"
+            >
+              Expérience
+            </button>
+            <button 
               onClick={() => scrollToSection('gallery')}
               className="text-foreground hover:text-primary transition-smooth"
             >
@@ -47,7 +63,7 @@ export const Header = () => {
             >
               Contact
             </button>
-            <Button variant="hero" size="sm">
+            <Button variant="hero" size="sm" onClick={handleCalendlyClick}>
               Prendre RDV
             </Button>
           </div>
@@ -78,6 +94,18 @@ export const Header = () => {
                 Projets
               </button>
               <button 
+                onClick={() => scrollToSection('education')}
+                className="text-left text-foreground hover:text-primary transition-smooth"
+              >
+                Formation
+              </button>
+              <button 
+                onClick={() => scrollToSection('experience')}
+                className="text-left text-foreground hover:text-primary transition-smooth"
+              >
+                Expérience
+              </button>
+              <button 
                 onClick={() => scrollToSection('gallery')}
                 className="text-left text-foreground hover:text-primary transition-smooth"
               >
@@ -89,7 +117,7 @@ export const Header = () => {
               >
                 Contact
               </button>
-              <Button variant="hero" size="sm" className="w-fit">
+              <Button variant="hero" size="sm" className="w-fit" onClick={handleCalendlyClick}>
                 Prendre RDV
               </Button>
             </div>
