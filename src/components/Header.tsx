@@ -58,6 +58,12 @@ export const Header = () => {
               Galerie
             </button>
             <button 
+              onClick={() => scrollToSection('calendly')}
+              className="text-foreground hover:text-primary transition-smooth"
+            >
+              Réservation
+            </button>
+            <button 
               onClick={() => scrollToSection('contact')}
               className="text-foreground hover:text-primary transition-smooth"
             >
@@ -110,6 +116,12 @@ export const Header = () => {
                 className="text-left text-foreground hover:text-primary transition-smooth"
               >
                 Galerie
+              </button>
+              <button 
+                onClick={() => scrollToSection('calendly')}
+                className="text-left text-foreground hover:text-primary transition-smooth"
+              >
+                Réservation
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}

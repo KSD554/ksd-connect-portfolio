@@ -193,3 +193,22 @@ All colors MUST be HSL.
   -webkit-background-clip: text;
   background-clip: text;
 }
+
+/* Calendly responsive styles */
+.calendly-inline-widget {
+  min-height: 630px !important;
+}
+
+@media (max-width: 768px) {
+  .calendly-inline-widget {
+    min-height: 600px !important;
+    height: 600px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendly-inline-widget {
+    min-height: 550px !important;
+    height: 550px !important;
+  }
+}

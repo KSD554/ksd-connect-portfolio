@@ -94,7 +94,7 @@ export const ChatBot = () => {
       <Button
         variant="cta"
         size="lg"
-        className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 rounded-full shadow-glow animate-glow"
+        className="fixed bottom-4 left-4 md:bottom-6 md:left-6 z-50 rounded-full shadow-glow animate-glow"
         onClick={() => setIsOpen(true)}
       >
         <MessageCircle className="w-5 h-5 md:w-6 md:h-6" />
@@ -103,7 +103,7 @@ export const ChatBot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <Card className="fixed bottom-16 right-2 md:bottom-24 md:right-6 z-50 w-[calc(100vw-1rem)] max-w-sm md:max-w-96 h-[70vh] max-h-[500px] shadow-elegant border border-primary/20 animate-slide-up">
+        <Card className="fixed bottom-16 left-2 md:bottom-24 md:left-6 z-50 w-[calc(100vw-1rem)] max-w-sm md:max-w-96 h-[70vh] max-h-[500px] shadow-elegant border border-primary/20 animate-slide-up">
           <CardHeader className="flex flex-row items-center justify-between bg-gradient-primary text-primary-foreground rounded-t-lg p-3 md:p-4">
             <div className="flex items-center gap-2">
               <User className="w-4 h-4 md:w-5 md:h-5" />
