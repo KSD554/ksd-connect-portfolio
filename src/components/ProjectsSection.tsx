@@ -19,7 +19,7 @@ const projects = [
     description: "Site web événementiel pour le festival de musique, danse et culture africaine à Bouaké avec compte à rebours interactif et informations pratiques.",
     image: africanDeltaImage,
     tags: ["HTML", "CSS", "JavaScript", "Design Responsive", "Événementiel"],
-    demoUrl: "#",
+    demoUrl: "https://african-delta-festival.lovable.app/",
     githubUrl: "#",
     featured: true
   },
@@ -29,7 +29,7 @@ const projects = [
     description: "Site e-commerce spécialisé dans les créations artisanales au crochet : bikinis élégants, sacs colorés, bonnets raffinés et vêtements sur mesure.",
     image: carolineShopImage,
     tags: ["React", "E-commerce", "Design UI/UX", "Artisanat", "Responsive"],
-    demoUrl: "#",
+    demoUrl: "https://caroline-crochet-showcase.lovable.app/",
     githubUrl: "#",
     featured: true
   },
