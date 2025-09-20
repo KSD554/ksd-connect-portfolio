@@ -100,6 +100,8 @@ export const HeroSection = () => {
                   alt="KSD - Développeur Full-Stack"
                   loading="eager"
                   fetchPriority="high"
+                  width="320"
+                  height="384"
                   className="w-64 h-80 sm:w-72 sm:h-88 lg:w-80 lg:h-96 object-cover rounded-2xl shadow-card"
                 />
               </div>

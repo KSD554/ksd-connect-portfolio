@@ -71,6 +71,8 @@ export const GallerySection = () => {
                   src={image.src}
                   alt={image.title}
                   loading="lazy"
+                  width="411" 
+                  height="231"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-40 transition-opacity duration-300 flex items-center justify-center">

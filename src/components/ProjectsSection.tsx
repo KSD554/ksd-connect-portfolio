@@ -90,6 +90,8 @@ export const ProjectsSection = () => {
                     src={project.image}
                     alt={project.title}
                     loading="lazy"
+                    width="411"
+                    height="231"
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
