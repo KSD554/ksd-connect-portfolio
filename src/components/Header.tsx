@@ -27,37 +27,39 @@ export const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => scrollToSection('hero')}
-              className="text-foreground hover:text-primary transition-smooth"
-            >
-              Accueil
-            </button>
-            <button 
-              onClick={() => scrollToSection('projects')}
-              className="text-foreground hover:text-primary transition-smooth"
-            >
-              Projets
-            </button>
-            <button 
-              onClick={() => scrollToSection('education')}
-              className="text-foreground hover:text-primary transition-smooth"
-            >
-              Formation
-            </button>
-            <button 
-              onClick={() => scrollToSection('gallery')}
-              className="text-foreground hover:text-primary transition-smooth"
-            >
-              Galerie
-            </button>
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="text-foreground hover:text-primary transition-smooth"
-            >
-              Contact
-            </button>
+          <div className="hidden md:flex items-center justify-between flex-1 ml-8">
+            <div className="flex items-center space-x-8 flex-1 justify-center">
+              <button 
+                onClick={() => scrollToSection('hero')}
+                className="text-foreground hover:text-primary transition-smooth"
+              >
+                Accueil
+              </button>
+              <button 
+                onClick={() => scrollToSection('projects')}
+                className="text-foreground hover:text-primary transition-smooth"
+              >
+                Projets
+              </button>
+              <button 
+                onClick={() => scrollToSection('education')}
+                className="text-foreground hover:text-primary transition-smooth"
+              >
+                Formation
+              </button>
+              <button 
+                onClick={() => scrollToSection('gallery')}
+                className="text-foreground hover:text-primary transition-smooth"
+              >
+                Galerie
+              </button>
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="text-foreground hover:text-primary transition-smooth"
+              >
+                Contact
+              </button>
+            </div>
             <Button variant="hero" size="sm" onClick={handleCalendlyClick}>
               Prendre RDV
             </Button>
