@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Eye, ArrowRight } from "lucide-react";
 
-import projet2Image from "@/assets/projet-2-updated.png";
-import projet1Image from "@/assets/projet-1-updated.png";
-import projet5Image from "@/assets/projet-5-updated.png";
-import plumeImage from "@/assets/plume-partagee-updated.png";
-import logoImage from "@/assets/logo-craft-updated.png";
+import projet2Image from "@/assets/projet-2-optimized.webp";
+import projet1Image from "@/assets/projet-1-optimized.webp";
+import projet5Image from "@/assets/projet-5-optimized.webp";
+import plumeImage from "@/assets/plume-partagee-optimized.webp";
+import logoImage from "@/assets/logo-craft-optimized.webp";
 
 const projects = [
   {

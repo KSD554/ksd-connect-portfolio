@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Download, Calendar, ArrowRight, MessageCircle } from "lucide-react";
-import ksdPhoto from "@/assets/ksd-photo.jpg";
+import ksdPhoto from "@/assets/ksd-photo-optimized.webp";
 
 export const HeroSection = () => {
   const handleCalendlyClick = () => {
