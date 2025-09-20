@@ -1,10 +1,35 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar } from "lucide-react";
 
 export const CalendlySection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
-    // Load Calendly script with defer for better FID
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !scriptLoaded) {
+            setIsVisible(true);
+            loadCalendlyScript();
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [scriptLoaded]);
+
+  const loadCalendlyScript = () => {
+    if (scriptLoaded) return;
+    
     const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
     
     if (!existingScript) {
@@ -12,12 +37,15 @@ export const CalendlySection = () => {
       script.src = 'https://assets.calendly.com/assets/external/widget.js';
       script.async = true;
       script.defer = true;
+      script.onload = () => setScriptLoaded(true);
       document.head.appendChild(script);
+    } else {
+      setScriptLoaded(true);
     }
-  }, []);
+  };
 
   return (
-    <section id="calendly" className="py-24 bg-gradient-card">
+    <section id="calendly" className="py-24 bg-gradient-card" ref={sectionRef}>
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -42,15 +70,27 @@ export const CalendlySection = () => {
             <CardContent className="p-0">
               {/* Calendly Widget Container */}
               <div className="w-full bg-background">
-                <div 
-                  className="calendly-inline-widget" 
-                  data-url="https://calendly.com/kouassisadok3/30min"
-                  style={{
-                    minWidth: '320px',
-                    height: '700px',
-                    width: '100%'
-                  }}
-                ></div>
+                {isVisible && scriptLoaded ? (
+                  <div 
+                    className="calendly-inline-widget" 
+                    data-url="https://calendly.com/kouassisadok3/30min"
+                    style={{
+                      minWidth: '320px',
+                      height: '700px',
+                      width: '100%'
+                    }}
+                  ></div>
+                ) : (
+                  <div 
+                    className="flex items-center justify-center"
+                    style={{ minWidth: '320px', height: '700px' }}
+                  >
+                    <div className="text-center">
+                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+                      <p className="text-muted-foreground">Chargement du calendrier...</p>
+                    </div>
+                  </div>
+                )}
               </div>
             </CardContent>
           </Card>
