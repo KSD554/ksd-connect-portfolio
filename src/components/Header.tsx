@@ -10,6 +10,10 @@ export const Header = () => {
     setIsMenuOpen(false);
   };
 
+  const handleCalendlyClick = () => {
+    window.open('https://calendly.com/kouassisadok3/30min', '_blank');
+  };
+
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
@@ -60,6 +64,9 @@ export const Header = () => {
             >
               Contact
             </button>
+            <Button variant="hero" size="sm" onClick={handleCalendlyClick}>
+              Prendre RDV
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -111,6 +118,9 @@ export const Header = () => {
               >
                 Contact
               </button>
+              <Button variant="hero" size="sm" className="w-fit" onClick={handleCalendlyClick}>
+                Prendre RDV
+              </Button>
             </div>
           </div>
         )}
