@@ -8,7 +8,6 @@ const EducationSection = lazy(() => import("@/components/EducationSection").then
 const ExperienceSection = lazy(() => import("@/components/ExperienceSection").then(module => ({ default: module.ExperienceSection })));
 const GallerySection = lazy(() => import("@/components/GallerySection").then(module => ({ default: module.GallerySection })));
 const ContactSection = lazy(() => import("@/components/ContactSection").then(module => ({ default: module.ContactSection })));
-const CalendlySection = lazy(() => import("@/components/CalendlySection").then(module => ({ default: module.CalendlySection })));
 const ChatBot = lazy(() => import("@/components/ChatBot").then(module => ({ default: module.ChatBot })));
 
 // Intersection Observer hook for performance
@@ -41,14 +40,12 @@ const Index = () => {
   const educationRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLDivElement>(null);
   const galleryRef = useRef<HTMLDivElement>(null);
-  const calendlyRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
   const projectsVisible = useIntersectionObserver(projectsRef);
   const educationVisible = useIntersectionObserver(educationRef);
   const experienceVisible = useIntersectionObserver(experienceRef);
   const galleryVisible = useIntersectionObserver(galleryRef);
-  const calendlyVisible = useIntersectionObserver(calendlyRef);
   const contactVisible = useIntersectionObserver(contactRef);
   return (
     <div className="min-h-screen bg-background">
@@ -84,14 +81,6 @@ const Index = () => {
           {galleryVisible && (
             <Suspense fallback={<div className="h-64 flex items-center justify-center"><div className="animate-spin rounded-full h-6 w-6 border-b-2 border-primary"></div></div>}>
               <GallerySection />
-            </Suspense>
-          )}
-        </div>
-        
-        <div ref={calendlyRef} className="min-h-[400px]">
-          {calendlyVisible && (
-            <Suspense fallback={<div className="h-96 flex items-center justify-center"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div></div>}>
-              <CalendlySection />
             </Suspense>
           )}
         </div>

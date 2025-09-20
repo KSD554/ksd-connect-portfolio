@@ -10,9 +10,6 @@ export const Header = () => {
     setIsMenuOpen(false);
   };
 
-  const handleCalendlyClick = () => {
-    window.open('https://calendly.com/khalilsaiddiop', '_blank');
-  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
@@ -58,20 +55,11 @@ export const Header = () => {
               Galerie
             </button>
             <button 
-              onClick={() => scrollToSection('calendly')}
-              className="text-foreground hover:text-primary transition-smooth"
-            >
-              Réservation
-            </button>
-            <button 
               onClick={() => scrollToSection('contact')}
               className="text-foreground hover:text-primary transition-smooth"
             >
               Contact
             </button>
-            <Button variant="hero" size="sm" onClick={handleCalendlyClick}>
-              Prendre RDV
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -118,20 +106,11 @@ export const Header = () => {
                 Galerie
               </button>
               <button 
-                onClick={() => scrollToSection('calendly')}
-                className="text-left text-foreground hover:text-primary transition-smooth"
-              >
-                Réservation
-              </button>
-              <button 
                 onClick={() => scrollToSection('contact')}
                 className="text-left text-foreground hover:text-primary transition-smooth"
               >
                 Contact
               </button>
-              <Button variant="hero" size="sm" className="w-fit" onClick={handleCalendlyClick}>
-                Prendre RDV
-              </Button>
             </div>
           </div>
         )}
