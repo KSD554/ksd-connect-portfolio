@@ -36,3 +36,6 @@ enable_confirmations = false
 
 [functions.chat-with-ai]
 verify_jwt = false
+
+[functions.send-contact-notification]
+verify_jwt = false
