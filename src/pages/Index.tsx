@@ -1,12 +1,15 @@
+import { lazy, Suspense } from "react";
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { EducationSection } from "@/components/EducationSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { GallerySection } from "@/components/GallerySection";
-import { CalendlySection } from "@/components/CalendlySection";
 import { ContactSection } from "@/components/ContactSection";
-import { ChatBot } from "@/components/ChatBot";
+
+// Lazy load non-critical components to improve FID
+const CalendlySection = lazy(() => import("@/components/CalendlySection").then(module => ({ default: module.CalendlySection })));
+const ChatBot = lazy(() => import("@/components/ChatBot").then(module => ({ default: module.ChatBot })));
 
 const Index = () => {
   return (
@@ -18,10 +21,14 @@ const Index = () => {
         <EducationSection />
         <ExperienceSection />
         <GallerySection />
-        <CalendlySection />
+        <Suspense fallback={<div className="h-96 flex items-center justify-center"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div></div>}>
+          <CalendlySection />
+        </Suspense>
         <ContactSection />
       </main>
-      <ChatBot />
+      <Suspense fallback={null}>
+        <ChatBot />
+      </Suspense>
     </div>
   );
 };
