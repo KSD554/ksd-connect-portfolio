@@ -8,8 +8,12 @@ export const HeroSection = () => {
   };
 
   const handleDownloadCV = () => {
-    // This will trigger when CV download is implemented
-    console.log('Download CV clicked');
+    const link = document.createElement('a');
+    link.href = '/cv-sadok-kouassi.pdf';
+    link.download = 'CV-Sadok-Kouassi.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const scrollToProjects = () => {
@@ -31,17 +35,17 @@ export const HeroSection = () => {
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
                 Salut 👋, je suis{" "}
                 <span className="bg-gradient-primary bg-clip-text text-transparent">
-                  KSD
+                  Sadok Kouassi
                 </span>
               </h1>
               
               <h2 className="text-2xl md:text-3xl font-semibold text-muted-foreground">
-                Développeur Full-Stack
+                Analyste en Informatique Décisionnelle
               </h2>
               
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Passionné par la <strong className="text-primary">MERN Stack</strong> et les technologies modernes. 
-                Je crée des applications web innovantes et performantes qui transforment vos idées en réalité digitale.
+                Jeune diplômé passionné par l'<strong className="text-primary">analyse de données</strong> et le développement web. 
+                Je crée des solutions innovantes avec Python, React, Django et les outils de Business Intelligence.
               </p>
             </div>
 
@@ -97,7 +101,7 @@ export const HeroSection = () => {
               <div className="relative bg-gradient-card rounded-3xl p-2 shadow-elegant">
                 <img
                   src={ksdPhoto}
-                  alt="KSD - Développeur Full-Stack"
+                  alt="Sadok Kouassi - Analyste en Informatique Décisionnelle"
                   loading="eager"
                   fetchPriority="high"
                   width="320"

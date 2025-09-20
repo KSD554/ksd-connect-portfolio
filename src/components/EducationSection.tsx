@@ -4,18 +4,26 @@ import { GraduationCap, Calendar } from "lucide-react";
 const educations = [
   {
     id: 1,
-    degree: "Licence Professionnelle en ID (Informatique Décisionnelle)",
-    school: "Université",
+    degree: "Licence Professionnelle en Informatique Décisionnelle",
+    school: "HETEC - Bouaké",
     period: "2022 - 2025",
-    description: "Formation spécialisée en informatique décisionnelle, data science et développement web.",
+    description: "Formation spécialisée en informatique décisionnelle, analyse de données, Business Intelligence et développement web.",
     current: true
   },
   {
     id: 2,
-    degree: "Baccalauréat en Sciences expérimentales (S2)",
-    school: "Groupe Scolaire Yalla Suur-En",
+    degree: "Baccalauréat S2",
+    school: "Groupe Scolaire Yalla Suur-En - Dakar",
     period: "2021 - 2022",
-    description: "Diplômé avec une solide base en pensée critique et en résolution de problèmes.",
+    description: "Formation scientifique avec spécialisation en mathématiques et sciences expérimentales.",
+    current: false
+  },
+  {
+    id: 3,
+    degree: "BEPC",
+    school: "Collège Privé Imes - Bouaké",
+    period: "2014 - 2015",
+    description: "Formation générale du collège avec obtention du Brevet d'Études du Premier Cycle.",
     current: false
   }
 ];

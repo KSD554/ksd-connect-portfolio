@@ -5,12 +5,12 @@ import { Briefcase, Calendar, MapPin } from "lucide-react";
 const experiences = [
   {
     id: 1,
-    title: "Développeur Freelance",
-    company: "Indépendant",
-    location: "Remote",
-    period: "2024 - Présent",
-    description: "Création et développement de solutions web personnalisées pour répondre aux besoins spécifiques de mes clients.",
-    skills: ["React", "Node.js", "MongoDB", "TypeScript", "Stripe", "PostgreSQL"],
+    title: "Étudiant en Informatique Décisionnelle",
+    company: "HETEC - Bouaké",
+    location: "Bouaké, Côte d'Ivoire",
+    period: "2022 - 2025",
+    description: "Formation en analyse de données, Business Intelligence et développement web. Spécialisé dans Python, les bases de données et la visualisation de données.",
+    skills: ["Python", "MySQL", "MongoDB", "Power BI", "Tableau", "Django", "React", "JavaScript", "Excel Avancé", "Matplotlib"],
     current: true
   }
 ];
@@ -22,10 +22,10 @@ export const ExperienceSection = () => {
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <Briefcase className="inline-block w-12 h-12 mr-4 text-primary" />
-            Expérience
+            Compétences & Formation
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Mon parcours professionnel dans le développement web et la création de solutions innovantes.
+            Ma formation actuelle et les compétences techniques que je développe en informatique décisionnelle.
           </p>
         </div>
 

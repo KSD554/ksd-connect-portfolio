@@ -9,29 +9,52 @@ import projet5Image from "@/assets/projet-5-optimized.webp";
 import plumeImage from "@/assets/plume-partagee-optimized.webp";
 import logoImage from "@/assets/logo-craft-optimized.webp";
 
+import africanDeltaImage from "@/assets/african-delta-festival.png";
+import carolineShopImage from "@/assets/caroline-shop.png";
+
 const projects = [
   {
     id: 1,
+    title: "African Delta Festival",
+    description: "Site web événementiel pour le festival de musique, danse et culture africaine à Bouaké avec compte à rebours interactif et informations pratiques.",
+    image: africanDeltaImage,
+    tags: ["HTML", "CSS", "JavaScript", "Design Responsive", "Événementiel"],
+    demoUrl: "#",
+    githubUrl: "#",
+    featured: true
+  },
+  {
+    id: 2,
+    title: "Caroline Shop",
+    description: "Site e-commerce spécialisé dans les créations artisanales au crochet : bikinis élégants, sacs colorés, bonnets raffinés et vêtements sur mesure.",
+    image: carolineShopImage,
+    tags: ["React", "E-commerce", "Design UI/UX", "Artisanat", "Responsive"],
+    demoUrl: "#",
+    githubUrl: "#",
+    featured: true
+  },
+  {
+    id: 3,
     title: "E-Shop - Plateforme E-commerce",
     description: "Plateforme e-commerce moderne avec catalogue produits, panier et système de paiement intégré.",
     image: projet2Image,
     tags: ["React", "Node.js", "MongoDB", "Stripe"],
     demoUrl: "https://multi-vendor-ecommerce-main-hi7c.vercel.app/",
     githubUrl: "#",
-    featured: true
+    featured: false
   },
   {
-    id: 2,
+    id: 4,
     title: "CasaCentral - Immobilier",
     description: "Application immobilière pour la recherche et gestion de propriétés avec géolocalisation.",
     image: projet1Image,
     tags: ["React", "Express", "PostgreSQL", "Maps API"],
     demoUrl: "https://casacentral-seven.vercel.app/",
     githubUrl: "#",
-    featured: true
+    featured: false
   },
   {
-    id: 3,
+    id: 5,
     title: "CVForge - Générateur de CV",
     description: "Outil de création de CV professionnel avec templates personnalisables et export PDF.",
     image: projet5Image,
@@ -41,7 +64,7 @@ const projects = [
     featured: false
   },
   {
-    id: 4,
+    id: 6,
     title: "Plume Partagée - Blog",
     description: "Plateforme de blog collaborative avec système d'articles et commentaires.",
     image: plumeImage,
@@ -51,7 +74,7 @@ const projects = [
     featured: false
   },
   {
-    id: 5,
+    id: 7,
     title: "LogoCraft - Créateur de Logos",
     description: "Application web pour créer des logos personnalisés avec outils de design intuitifs.",
     image: logoImage,

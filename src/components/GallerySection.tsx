@@ -10,33 +10,48 @@ import projet5Image from "@/assets/projet-5-optimized.webp";
 import plumeImage from "@/assets/plume-partagee-optimized.webp";
 import logoImage from "@/assets/logo-craft-optimized.webp";
 
+import africanDeltaImage from "@/assets/african-delta-festival.png";
+import carolineShopImage from "@/assets/caroline-shop.png";
+
 const galleryImages = [
   {
     id: 1,
+    src: africanDeltaImage,
+    title: "African Delta Festival",
+    description: "Site événementiel avec compte à rebours pour festival culturel africain"
+  },
+  {
+    id: 2,
+    src: carolineShopImage,
+    title: "Caroline Shop",
+    description: "E-commerce pour créations artisanales au crochet avec galerie produits"
+  },
+  {
+    id: 3,
     src: projet2Image,
     title: "E-Shop Interface",
     description: "Interface utilisateur moderne pour plateforme e-commerce"
   },
   {
-    id: 2,
+    id: 4,
     src: projet1Image,
     title: "CasaCentral Design",
     description: "Design épuré pour application immobilière"
   },
   {
-    id: 3,
+    id: 5,
     src: projet5Image,
     title: "CVForge Dashboard",
     description: "Interface de création de CV professionnel"
   },
   {
-    id: 4,
+    id: 6,
     src: plumeImage,
     title: "Plume Partagée",
     description: "Design coloré pour plateforme de blog"
   },
   {
-    id: 5,
+    id: 7,
     src: logoImage,
     title: "LogoCraft Studio",
     description: "Outil de création de logos interactif"
