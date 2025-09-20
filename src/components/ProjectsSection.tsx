@@ -11,10 +11,21 @@ import logoImage from "@/assets/logo-craft-optimized.webp";
 
 import africanDeltaImage from "@/assets/african-delta-festival.png";
 import carolineShopImage from "@/assets/caroline-shop.png";
+import amourDivinImage from "@/assets/amour-divin.png";
 
 const projects = [
   {
     id: 1,
+    title: "Amour Divin",
+    description: "Site web pour l'ONG Amour Divin œuvrant en Côte d'Ivoire depuis 2012 pour lutter contre la pauvreté et accompagner les plus vulnérables vers l'autonomie.",
+    image: amourDivinImage,
+    tags: ["React", "Design UI/UX", "ONG", "Solidarité", "Responsive"],
+    demoUrl: "#",
+    githubUrl: "#",
+    featured: true
+  },
+  {
+    id: 2,
     title: "African Delta Festival",
     description: "Site web événementiel pour le festival de musique, danse et culture africaine à Bouaké avec compte à rebours interactif et informations pratiques.",
     image: africanDeltaImage,
@@ -24,7 +35,7 @@ const projects = [
     featured: true
   },
   {
-    id: 2,
+    id: 3,
     title: "Caroline Shop",
     description: "Site e-commerce spécialisé dans les créations artisanales au crochet : bikinis élégants, sacs colorés, bonnets raffinés et vêtements sur mesure.",
     image: carolineShopImage,
@@ -34,7 +45,7 @@ const projects = [
     featured: true
   },
   {
-    id: 3,
+    id: 4,
     title: "E-Shop - Plateforme E-commerce",
     description: "Plateforme e-commerce moderne avec catalogue produits, panier et système de paiement intégré.",
     image: projet2Image,
@@ -44,7 +55,7 @@ const projects = [
     featured: false
   },
   {
-    id: 4,
+    id: 5,
     title: "CasaCentral - Immobilier",
     description: "Application immobilière pour la recherche et gestion de propriétés avec géolocalisation.",
     image: projet1Image,
@@ -54,7 +65,7 @@ const projects = [
     featured: false
   },
   {
-    id: 5,
+    id: 6,
     title: "CVForge - Générateur de CV",
     description: "Outil de création de CV professionnel avec templates personnalisables et export PDF.",
     image: projet5Image,
@@ -64,7 +75,7 @@ const projects = [
     featured: false
   },
   {
-    id: 6,
+    id: 7,
     title: "Plume Partagée - Blog",
     description: "Plateforme de blog collaborative avec système d'articles et commentaires.",
     image: plumeImage,
@@ -74,7 +85,7 @@ const projects = [
     featured: false
   },
   {
-    id: 7,
+    id: 8,
     title: "LogoCraft - Créateur de Logos",
     description: "Application web pour créer des logos personnalisés avec outils de design intuitifs.",
     image: logoImage,
