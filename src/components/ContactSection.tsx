@@ -218,25 +218,8 @@ export const ContactSection = () => {
               </CardContent>
             </Card>
 
-            {/* Calendly Widget */}
-            <Card className="animate-slide-up shadow-card border-border/50" style={{ animationDelay: '0.2s' }}>
-              <CardHeader>
-                <CardTitle className="text-xl">Réservation en ligne</CardTitle>
-                <CardDescription>
-                  Choisissez un créneau qui vous convient
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div 
-                  className="calendly-inline-widget rounded-lg overflow-hidden shadow-card" 
-                  data-url="https://calendly.com/kouassisadok3/30min" 
-                  style={{ minWidth: '320px', height: '400px' }}
-                ></div>
-              </CardContent>
-            </Card>
-
             {/* Contact Info */}
-            <Card className="animate-slide-up shadow-card border-border/50" style={{ animationDelay: '0.3s' }}>
+            <Card className="animate-slide-up shadow-card border-border/50" style={{ animationDelay: '0.2s' }}>
               <CardHeader>
                 <CardTitle className="text-xl">Informations</CardTitle>
               </CardHeader>
