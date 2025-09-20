@@ -98,6 +98,8 @@ export const HeroSection = () => {
                 <img
                   src={ksdPhoto}
                   alt="KSD - Développeur Full-Stack"
+                  loading="eager"
+                  fetchPriority="high"
                   className="w-64 h-80 sm:w-72 sm:h-88 lg:w-80 lg:h-96 object-cover rounded-2xl shadow-card"
                 />
               </div>
