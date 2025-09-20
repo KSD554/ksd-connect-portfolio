@@ -152,10 +152,10 @@ export const ProjectsSection = () => {
                     <Eye className="w-4 h-4" />
                     Démo
                   </Button>
-                  <Button variant="outline" size="sm">
+                  <Button variant="outline" size="sm" aria-label="Voir le code sur GitHub">
                     <Github className="w-4 h-4" />
                   </Button>
-                  <Button variant="outline" size="sm">
+                  <Button variant="outline" size="sm" aria-label="Ouvrir le site externe">
                     <ExternalLink className="w-4 h-4" />
                   </Button>
                 </div>
