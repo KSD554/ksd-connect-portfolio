@@ -20,8 +20,8 @@ const projects = [
     description: "Site web pour l'ONG Amour Divin œuvrant en Côte d'Ivoire depuis 2012 pour lutter contre la pauvreté et accompagner les plus vulnérables vers l'autonomie.",
     image: amourDivinImage,
     tags: ["React", "Design UI/UX", "ONG", "Solidarité", "Responsive"],
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "https://amour-divin.siteviral.com/",
+    githubUrl: "https://github.com/KSD554/amour-divin-connect",
     featured: true
   },
   {
@@ -31,7 +31,7 @@ const projects = [
     image: africanDeltaImage,
     tags: ["HTML", "CSS", "JavaScript", "Design Responsive", "Événementiel"],
     demoUrl: "https://african-delta-festival.lovable.app/",
-    githubUrl: "#",
+    githubUrl: "https://github.com/KSD554/african-delta-festival",
     featured: true
   },
   {
@@ -41,7 +41,7 @@ const projects = [
     image: carolineShopImage,
     tags: ["React", "E-commerce", "Design UI/UX", "Artisanat", "Responsive"],
     demoUrl: "https://caroline-crochet-showcase.lovable.app/",
-    githubUrl: "#",
+    githubUrl: "https://github.com/KSD554/caroline-crochet-showcase",
     featured: true
   },
   {
@@ -51,7 +51,7 @@ const projects = [
     image: projet2Image,
     tags: ["React", "Node.js", "MongoDB", "Stripe"],
     demoUrl: "https://multi-vendor-ecommerce-main-hi7c.vercel.app/",
-    githubUrl: "#",
+    githubUrl: "https://github.com/KSD554/multi-vendor-ecommerce-main",
     featured: false
   },
   {
@@ -61,7 +61,7 @@ const projects = [
     image: projet1Image,
     tags: ["React", "Express", "PostgreSQL", "Maps API"],
     demoUrl: "https://casacentral-seven.vercel.app/",
-    githubUrl: "#",
+    githubUrl: "https://github.com/KSD554/frontend",
     featured: false
   },
   {
@@ -71,7 +71,7 @@ const projects = [
     image: projet5Image,
     tags: ["React", "TypeScript", "PDF.js", "Tailwind"],
     demoUrl: "https://cv-forge-ci.vercel.app/",
-    githubUrl: "#",
+    githubUrl: "https://github.com/KSD554/cvbuilder-main",
     featured: false
   },
   {
@@ -156,7 +156,12 @@ export const ProjectsSection = () => {
                     <Eye className="w-4 h-4" />
                     Démo
                   </Button>
-                  <Button variant="outline" size="sm" aria-label="Voir le code sur GitHub">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    aria-label="Voir le code sur GitHub"
+                    onClick={() => window.open(project.githubUrl, '_blank')}
+                  >
                     <Github className="w-4 h-4" />
                   </Button>
                   <Button 
