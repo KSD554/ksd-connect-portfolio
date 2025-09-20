@@ -18,13 +18,16 @@ serve(async (req) => {
       throw new Error('Message is required');
     }
 
-    const HUGGING_FACE_TOKEN = Deno.env.get('HUGGING_FACE_ACCESS_TOKEN');
-    if (!HUGGING_FACE_TOKEN) {
-      throw new Error('HUGGING_FACE_ACCESS_TOKEN is not set');
+    const OPENROUTER_API_KEY = Deno.env.get('OPENROUTER_API_KEY');
+    if (!OPENROUTER_API_KEY) {
+      throw new Error('OPENROUTER_API_KEY is not set');
     }
 
-    // Créer le contexte pour KSD
-    const systemPrompt = `Tu es l'assistant virtuel de KSD (Kouassi Sadok), un développeur fullstack spécialisé dans la MERN Stack. Voici ce que tu dois savoir sur lui :
+    // Créer l'historique des messages pour OpenRouter
+    const messages = [
+      {
+        role: "system",
+        content: `Tu es l'assistant virtuel de KSD (Kouassi Sadok), un développeur fullstack spécialisé dans la MERN Stack. Voici ce que tu dois savoir sur lui :
 
 PROJETS PRINCIPAUX :
 • E-Shop - Plateforme e-commerce moderne avec React, Node.js et MongoDB
@@ -57,104 +60,76 @@ INSTRUCTIONS :
 - Encourage toujours la prise de contact ou de rendez-vous
 - Si on te demande des détails techniques, tu peux entrer dans les spécificités
 - Pour les tarifs, propose toujours un appel pour un devis précis
-- Reste dans le contexte de KSD et de ses services
-
-Message utilisateur: ${message}`;
-
-    // Utiliser l'API Hugging Face Inference
-    const response = await fetch(
-      "https://api-inference.huggingface.co/models/microsoft/DialoGPT-medium",
-      {
-        headers: {
-          "Authorization": `Bearer ${HUGGING_FACE_TOKEN}`,
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-        body: JSON.stringify({
-          inputs: systemPrompt,
-          parameters: {
-            max_new_tokens: 250,
-            temperature: 0.7,
-            do_sample: true,
-            top_p: 0.9,
-            repetition_penalty: 1.1,
-          },
-          options: {
-            wait_for_model: true,
-            use_cache: true,
-          }
-        }),
+- Reste dans le contexte de KSD et de ses services`
       }
-    );
+    ];
+
+    // Ajouter le contexte des messages récents
+    if (context && context.length > 0) {
+      context.slice(-4).forEach((msg: any) => {
+        messages.push({
+          role: msg.isUser ? "user" : "assistant",
+          content: msg.text
+        });
+      });
+    }
+
+    // Ajouter le message actuel
+    messages.push({
+      role: "user",
+      content: message
+    });
+
+    // Utiliser OpenRouter avec le modèle GPT-3.5-turbo (gratuit)
+    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
+        "Content-Type": "application/json",
+        "HTTP-Referer": "https://ksd-connect-portfolio.lovable.app",
+        "X-Title": "KSD Portfolio Chatbot"
+      },
+      body: JSON.stringify({
+        model: "openai/gpt-3.5-turbo",
+        messages: messages,
+        max_tokens: 300,
+        temperature: 0.7,
+        top_p: 0.9,
+        frequency_penalty: 0.1,
+        presence_penalty: 0.1
+      })
+    });
 
     if (!response.ok) {
-      // Si DialoGPT ne fonctionne pas, essayer avec un autre modèle
-      console.log("DialoGPT failed, trying alternative approach...");
+      console.log(`OpenRouter API error: ${response.status} ${response.statusText}`);
+      const errorText = await response.text();
+      console.log("Error details:", errorText);
       
-      const textGenResponse = await fetch(
-        "https://api-inference.huggingface.co/models/microsoft/DialoGPT-small",
-        {
-          headers: {
-            "Authorization": `Bearer ${HUGGING_FACE_TOKEN}`,
-            "Content-Type": "application/json",
-          },
-          method: "POST",
-          body: JSON.stringify({
-            inputs: message,
-            parameters: {
-              max_new_tokens: 150,
-              temperature: 0.8,
-              do_sample: true,
-            },
-            options: {
-              wait_for_model: true,
-            }
-          }),
-        }
-      );
-
-      if (!textGenResponse.ok) {
-        // Fallback avec des réponses contextuelles
-        const fallbackResponse = generateContextualResponse(message.toLowerCase());
-        return new Response(
-          JSON.stringify({ 
-            response: fallbackResponse,
-            source: "fallback"
-          }),
-          { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-        );
-      }
-
-      const textGenData = await textGenResponse.json();
-      const aiResponse = Array.isArray(textGenData) ? textGenData[0]?.generated_text || textGenData[0]?.text || "Je suis là pour vous aider !" : textGenData.generated_text || textGenData.text || "Comment puis-je vous assister ?";
-
+      // Fallback avec des réponses contextuelles
+      const fallbackResponse = generateContextualResponse(message.toLowerCase());
       return new Response(
         JSON.stringify({ 
-          response: aiResponse,
-          source: "huggingface-small"
+          response: fallbackResponse,
+          source: "fallback"
         }),
         { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
 
     const data = await response.json();
-    console.log("Hugging Face response:", data);
+    console.log("OpenRouter response:", data);
 
     let aiResponse = "Je suis là pour vous renseigner sur KSD et ses services !";
     
-    if (Array.isArray(data) && data.length > 0) {
-      aiResponse = data[0].generated_text || data[0].text || aiResponse;
-    } else if (data.generated_text) {
-      aiResponse = data.generated_text;
+    if (data.choices && data.choices.length > 0 && data.choices[0].message) {
+      aiResponse = data.choices[0].message.content;
     }
-
-    // Nettoyer la réponse et ajouter du contexte KSD si nécessaire
-    aiResponse = enhanceResponseWithKSDContext(aiResponse, message.toLowerCase());
 
     return new Response(
       JSON.stringify({ 
         response: aiResponse,
-        source: "huggingface"
+        source: "openrouter",
+        model_used: "gpt-3.5-turbo"
       }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
