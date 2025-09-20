@@ -134,13 +134,6 @@ export const ProjectsSection = () => {
                   {project.description}
                 </CardDescription>
                 
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary" className="text-xs">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
                 
                 <div className="flex gap-2">
                   <Button 
