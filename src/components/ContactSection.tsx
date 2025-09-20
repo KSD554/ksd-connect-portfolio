@@ -61,7 +61,7 @@ export const ContactSection = () => {
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent("Salut KSD ! Je suis intéressé par vos services de développement web. Pouvons-nous discuter de mon projet ?");
-    window.open(`https://wa.me/YOUR_PHONE_NUMBER?text=${message}`, '_blank');
+    window.open(`https://wa.me/2250704306642?text=${message}`, '_blank');
   };
 
   const handleCalendly = () => {
@@ -199,7 +199,7 @@ export const ContactSection = () => {
                   <Button 
                     variant="premium" 
                     className="flex-1"
-                    onClick={() => window.location.href = 'mailto:contact@ksd-dev.com'}
+                    onClick={() => window.location.href = 'mailto:kouassisadok3@gmail.com'}
                   >
                     <Mail className="w-5 h-5" />
                     Email
@@ -226,15 +226,15 @@ export const ContactSection = () => {
               <CardContent className="space-y-4">
                 <div className="flex items-center gap-3 text-muted-foreground">
                   <Mail className="w-5 h-5 text-primary" />
-                  <span>contact@ksd-dev.com</span>
+                  <span>kouassisadok3@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-3 text-muted-foreground">
                   <Phone className="w-5 h-5 text-primary" />
-                  <span>+33 X XX XX XX XX</span>
+                  <span>+225 0704306642</span>
                 </div>
                 <div className="flex items-center gap-3 text-muted-foreground">
                   <MapPin className="w-5 h-5 text-primary" />
-                  <span>France, Remote</span>
+                  <span>Côte d'Ivoire, Bouaké</span>
                 </div>
               </CardContent>
             </Card>
