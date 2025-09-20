@@ -11,6 +11,7 @@ export const HeroSection = () => {
     const link = document.createElement('a');
     link.href = '/cv-sadok-kouassi.pdf';
     link.download = 'CV-Sadok-Kouassi.pdf';
+    link.target = '_blank';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
