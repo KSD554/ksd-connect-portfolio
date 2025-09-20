@@ -47,12 +47,6 @@ export const Header = () => {
               Formation
             </button>
             <button 
-              onClick={() => scrollToSection('experience')}
-              className="text-foreground hover:text-primary transition-smooth"
-            >
-              Expérience
-            </button>
-            <button 
               onClick={() => scrollToSection('gallery')}
               className="text-foreground hover:text-primary transition-smooth"
             >
@@ -99,12 +93,6 @@ export const Header = () => {
                 className="text-left text-foreground hover:text-primary transition-smooth"
               >
                 Formation
-              </button>
-              <button 
-                onClick={() => scrollToSection('experience')}
-                className="text-left text-foreground hover:text-primary transition-smooth"
-              >
-                Expérience
               </button>
               <button 
                 onClick={() => scrollToSection('gallery')}
