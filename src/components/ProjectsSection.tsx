@@ -148,7 +148,12 @@ export const ProjectsSection = () => {
                   <Button variant="outline" size="sm" aria-label="Voir le code sur GitHub">
                     <Github className="w-4 h-4" />
                   </Button>
-                  <Button variant="outline" size="sm" aria-label="Ouvrir le site externe">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    aria-label="Ouvrir le site externe"
+                    onClick={() => window.open(project.demoUrl, '_blank')}
+                  >
                     <ExternalLink className="w-4 h-4" />
                   </Button>
                 </div>
