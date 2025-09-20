@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
+import { Footer } from "@/components/Footer";
 
 // Lazy load sections to reduce initial bundle size
 const ProjectsSection = lazy(() => import("@/components/ProjectsSection").then(module => ({ default: module.ProjectsSection })));
@@ -93,6 +94,7 @@ const Index = () => {
           )}
         </div>
       </main>
+      <Footer />
       <Suspense fallback={null}>
         <ChatBot />
       </Suspense>
