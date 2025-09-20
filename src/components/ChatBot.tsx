@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MessageCircle, X, Send, Calendar, User } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 interface Message {
   id: string;
@@ -41,9 +42,19 @@ export const ChatBot = () => {
     setInputMessage('');
     setIsTyping(true);
 
-    // Simulate AI response (replace with actual OpenAI API call)
-    setTimeout(() => {
-      const botResponse = generateBotResponse(message.toLowerCase());
+    try {
+      // Appel à la fonction AI avec Hugging Face
+      const { data, error } = await supabase.functions.invoke('chat-with-ai', {
+        body: { 
+          message: message,
+          context: messages.slice(-5) // Derniers 5 messages pour le contexte
+        }
+      });
+
+      if (error) throw error;
+
+      const botResponse = data?.response || "Désolé, je rencontre une difficulté. Pouvez-vous reformuler votre question ?";
+      
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
         text: botResponse,
@@ -52,8 +63,28 @@ export const ChatBot = () => {
       };
       
       setMessages(prev => [...prev, botMessage]);
+    } catch (error) {
+      console.error('Erreur chatbot:', error);
+      
+      // Fallback avec l'ancienne méthode en cas d'erreur
+      const fallbackResponse = generateBotResponse(message.toLowerCase());
+      const botMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        text: fallbackResponse,
+        isUser: false,
+        timestamp: new Date()
+      };
+      
+      setMessages(prev => [...prev, botMessage]);
+      
+      toast({
+        title: "Mode hors-ligne",
+        description: "Utilisation des réponses préprogrammées",
+        variant: "default"
+      });
+    } finally {
       setIsTyping(false);
-    }, 1500);
+    }
   };
 
   const generateBotResponse = (message: string): string => {
